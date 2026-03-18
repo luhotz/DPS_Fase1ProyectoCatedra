@@ -4,25 +4,27 @@ import { fetchSpotifyTrack, getAccessToken } from '../api/spotifyApi';
 import XPWindow from "./../components/XPWindow.js";
 
 export default function PlayMusicScreen() {
-  // Al cargar el componente, se obtienen los datos de una canción de Spotify
-  useEffect(() => {
-    const idTrack = "0nD62ke95NJvAI8chsRjRg";
-    const accessToken = getAccessToken();
-    fetchSpotifyTrack(idTrack, accessToken)
-      .then(data => {
-        console.log("Spotify track:", data.name);
-        setTrackInfo(data);
-      })
-      .catch(error => {
-        console.error("Error fetching Spotify track:", error);
-      });
-  }, []);
-
   const [trackInfo, setTrackInfo] = useState(null);
   const [duration, setDuration] = useState(0);
-  if (trackInfo) {
-    setDuration(trackInfo.duration_ms / 1000 / 60 + ":" + (trackInfo.duration_ms / 1000 % 60).toFixed(0).padStart(2, '0'));
-  }
+
+  useEffect(() => {
+    const idTrack = "0nD62ke95NJvAI8chsRjRg";
+    async function fetchData() {
+      try {
+        const accessToken = await getAccessToken();
+        const data = await fetchSpotifyTrack(idTrack, accessToken);
+        setTrackInfo(data);
+        // Para calcular la duración en formato mm:ss
+        const totalSeconds = Math.floor(data.duration_ms / 1000);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+        setDuration(`${minutes}:${seconds}`);
+      } catch (error) {
+        console.error("Error fetching Spotify track:", error);
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
 
