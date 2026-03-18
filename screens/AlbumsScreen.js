@@ -2,13 +2,16 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import XPWindow from "./../components/XPWindow.js";
 
-export default function AlbumsScreen(){
+export default function AlbumsScreen({ navigation }){
 
 return(
 
 <XPWindow title="Mis Álbumes Spotify">
 
 {/* MENU SUPERIOR */}
+<Text style={styles.backButton} onPress={() => navigation.navigate("Desktop")}>
+  Volver
+</Text>
 <View style={styles.menuBar}>
 <Text style={styles.menuText}>Archivo</Text>
 <Text style={styles.menuText}>Ver</Text>

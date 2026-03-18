@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import { fetchSpotifyTrack, getAccessToken } from '../api/spotifyApi';
 import XPWindow from "./../components/XPWindow.js";
 
-export default function PlayMusicScreen() {
+export default function PlayMusicScreen({ navigation }) {
   const [trackInfo, setTrackInfo] = useState(null);
   const [duration, setDuration] = useState(0);
 
@@ -31,6 +31,9 @@ export default function PlayMusicScreen() {
     <XPWindow title="Reproductor Spotify">
 
       {/* MENU SUPERIOR */}
+      <Text style={styles.backButton} onPress={() => navigation.navigate("Desktop")}>
+        Volver
+      </Text>
       <View style={styles.menuBar}>
         <Text style={styles.menuText}>Archivo</Text>
         <Text style={styles.menuText}>Ver</Text>
