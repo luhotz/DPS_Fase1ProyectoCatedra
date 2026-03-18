@@ -1,50 +1,58 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+1.Descripción del Proyecto
+Esta aplicación ha sido desarrollada utilizando React Native y Expo Go. El proyecto integra la **Spotify Web API** permitiendo a los usuarios explorar álbumes, visualizar listas de reproducción y gestionar la interfaz de reproducción musical para celulares
 
-1. Install dependencies
+##INTEGRANTES:
+Balcaceres Hernandez Diego Alexander - BH241800
+Flores Lino Daniel Enrique - FL220294
+Hernandez Ortiz Luis Ernesto - OH242206
+Alfaro Tomasino Ricardo Daniel - AT232988
+Cartagena Arteaga Luis Enrique - CA241136
 
-   ```bash
-   npm install
-   ```
+2. Tecnologías Utilizadas
+* **Framework:** Expo Go
+* **API Externa:** Spotify Web API
+* **Lenguajes:** JavaScript y TypeScript 
+* **Entorno de ejecución:** Node.js
+* **Estilos:** Stylesheet y temas personalizados (Hooks)
 
-2. Start the app
 
-   ```bash
-   npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+3. Organización del Código (Arquitectura)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+* **`api/`**: Contiene `spotifyApi.js` esta está encargado de las peticiones a los endpoints de Spotify (autenticación y obtención de datos)
+* **`screens/`**: Pantallas principales de la app:
+* `AlbumsScreen.js`: Visualización de catálogos musicales
+* `DesktopScreen.js`: Interfaz principal de navegación
+* `PlayScreen.js`: Reproductor 
+* **`components/`**: Elementos de UI reutilizables como `XPWindow.js`, `Taskbar.js`, `DesktopIcon.js` y componentes de sistema
+* **`hooks/`**: Logica para el manejo de esquemas de colores y temas dinámicos (`use-color-scheme.ts`)
+* **`constants/`**: Definiciones globales de estilo y configuración del tema
+* **`assets/`**: Recursos estaticos e imagenes de la aplicación
 
-## Get a fresh project
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
+4. Instrucciones de Instalación y Ejecución
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+4.1 Requisitos Previos
+* Tener instalado **Node.js** 
+* Instalar la aplicación **Expo Go** en su celular
 
-## Learn more
+5. Configuración del Repositorio
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+5.1 Clonar el repositorio
+git clone https://github.com/luhotz/DPS_Fase1ProyectoCatedra.git
 
-## Join the community
+5.2 Entrar a la carpeta del proyecto
+cd DPS_Fase1ProyectoCatedra-main
 
-Join our community of developers creating universal apps.
+5.3 Instalar dependencias de Node
+npm install
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5.4 Ejecución de la Aplicación
+Para correr el proyecto:
+
+npx expo start
