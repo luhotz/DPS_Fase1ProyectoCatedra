@@ -4,10 +4,15 @@
 Esta aplicación ha sido desarrollada utilizando React Native y Expo Go. El proyecto integra la **Spotify Web API** permitiendo a los usuarios explorar álbumes, visualizar listas de reproducción y gestionar la interfaz de reproducción musical para celulares
 
 ##INTEGRANTES:
+
 Balcaceres Hernandez Diego Alexander - BH241800
+
 Flores Lino Daniel Enrique - FL220294
+
 Hernandez Ortiz Luis Ernesto - OH242206
+
 Alfaro Tomasino Ricardo Daniel - AT232988
+
 Cartagena Arteaga Luis Enrique - CA241136
 
 2. Tecnologías Utilizadas
@@ -38,18 +43,22 @@ Cartagena Arteaga Luis Enrique - CA241136
 
 4.1 Requisitos Previos
 * Tener instalado **Node.js** 
-* Instalar la aplicación **Expo Go** en su celular
+* Instalar la aplicación **Expo Go** en su 
+
 
 5. Configuración del Repositorio
 
 
 5.1 Clonar el repositorio
+
 git clone https://github.com/luhotz/DPS_Fase1ProyectoCatedra.git
 
 5.2 Entrar a la carpeta del proyecto
+
 cd DPS_Fase1ProyectoCatedra-main
 
 5.3 Instalar dependencias de Node
+
 npm install
 
 5.4 Ejecución de la Aplicación
